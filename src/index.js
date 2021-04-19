@@ -9,7 +9,7 @@ import City from "./City";
 import SearchEngine from "./SearchEngine";
 
 import "./styles.css";
-
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (

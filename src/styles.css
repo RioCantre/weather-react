@@ -8,6 +8,7 @@ body {
 }
 
 .container,
+#background,
 .weather1,
 .weather2,
 .weather3 {
@@ -15,10 +16,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 25px;
+  margin: 0 auto;
+  padding: 0 auto;
   margin-top: 6%;
   max-width: 750px;
   max-height: 650px;
-  padding: 0 auto;
+  display: block;
 }
 
 .weather1 {
