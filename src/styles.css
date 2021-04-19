@@ -190,15 +190,15 @@ form {
   color: #68987f;
   padding-top: 10px;
 }
-a {
+.bottom-text a {
   text-decoration: none;
   transition: all 200ms ease;
   color: #371560;
 }
-a:hover {
+.bottom-text a:hover {
   color: #e7c120;
 }
-.name {
+.name a {
   font-size: 10px;
   color: #1e0b44;
   font-family: "Montserrat", sans-serif;
