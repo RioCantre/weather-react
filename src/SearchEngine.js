@@ -41,7 +41,7 @@ export default function SearchEngine() {
       </div>          
       <br />
       <div className="float-l">
-        <img  className="main-description" src="/image/09f.png" />
+        <img  className="main-description" src="/image/09f.png" alt="description"/>
       </div>
       <form className="input-group" onSubmit={handleSubmit}>
         <input
