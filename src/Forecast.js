@@ -5,7 +5,7 @@ export default function Forecast() {
 
   <section>
     <h3 className="weekname"> Thursday</h3>
-    <img className="outcome" src="src/image/02cs.png" alt="description" />
+    <img className="outcome" src="" alt="" />
     &nbsp;&nbsp;&nbsp;&nbsp;
     <span className="degree">
         <span className="degree-cel"> </span>° |

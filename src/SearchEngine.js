@@ -1,47 +1,54 @@
+import axios from "axios";
 import React, { useState } from "react";
+import CurrentDate from "./CurrentDate";
 import 'bootstrap/dist/css/bootstrap.css';
+import "./styles.css";
 
-export default function SearchEngine() {
-  let [city, setCity] = useState("");
+export default function SearchEngine(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false});
+  function handleSubmit(response) {
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+      description: response.data.weather[0].description,
+      iconUrl: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000)
+    });
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    document.querySelector("#main-city").innerHTML = `${city}`;
   }
 
-  function updateCity(event) {
-    setCity(event.target.value);
-  }
-
+  if (weatherData.ready) {
   return (
-
     <div>
-      <h1 id="main-city"> New York </h1>
-      <h2 className="day-name"> Wednesday </h2>
-      <h3>
-        <span className="current-date"> March 25, 2021 </span>
-        &nbsp;&nbsp;&nbsp;
-        <span className="current-time" > 11:39 </span>
-      </h3>
-      <p className="weather-quote" > </p>
+      <h1 id="main-city"> {props.city} </h1>
+
+      <CurrentDate date={weatherData.date} />
+     
+      <p className="weather-quote" >
+        "One should see that all appearance is like mist and fog."
+      </p>
 
       <div id="float-r">
-        <h3  className="description"> Clear </h3>
+        <h3  className="description text-capitalize"> {weatherData.description} </h3>
           <strong className="today-temp">
-          <span className="cel-temp" > </span>°|
-            <span className="fah-temp" > </span>°
+          <span className="cel-temp" > {Math.round(weatherData.temperature)} </span>°|
+            <span className="fah-temp" > {Math.round(weatherData.temperature * 9 / 5) + 32}</span>°
           </strong> 
           <br />                      
           <div id="other-info">
-            Humidity:  <span className="current-humid"> </span>%
+          Humidity:  <span className="current-humid"> {weatherData.humidity} </span>%
             <br />
-            Wind:  <span className="current-wind" >  </span> kmph 
+            Wind:  <span className="current-wind" > {weatherData.wind} </span> kmph 
           </div>
           <br />               
       </div>          
       <br />
       <div className="float-l">
-        <img  className="main-description" src="/image/09f.png" alt="description"/>
+        <img  className="main-description" src="{weatherData.iconUrl} " alt="{weatherData.description} "/>
       </div>
       <form className="input-group" onSubmit={handleSubmit}>
         <input
@@ -49,7 +56,7 @@ export default function SearchEngine() {
           type="text"
           className="form-control"
           placeholder=" Type a city in here... "
-          onChange={updateCity}
+
         />
 
         <button className="btn 1" type="submit" id="search-input">
@@ -61,4 +68,16 @@ export default function SearchEngine() {
       </form>
     </div>
   );
+
+  } else {
+    const apiKey = "97ab832bf6f8aa6eae3f8515460ad577";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleSubmit);
+
+
+    return "Currently loading..."
+
+  }
+
+
 }

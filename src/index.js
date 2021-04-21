@@ -14,7 +14,7 @@ function App() {
         <div className="row gx-1">
           <div className="col-8 order-last">
 
-            <SearchEngine />
+          <SearchEngine  city="New York"/>
 
           </div>
           
