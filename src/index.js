@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 function App() {
   return (
     <div className="container">
-      <div id="background" className="weather1 weather2 weather3">
+      <div id="background" >
         <div className="row gx-1">
           <div className="col-8 order-last">
 
