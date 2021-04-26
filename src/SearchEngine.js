@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import CurrentWeather from "./CurrentWeather";
-// import "./styles.css";
+import Forecast from "./Forecast";
+import "./styles.css";
 
 export default function SearchEngine(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -11,6 +12,7 @@ export default function SearchEngine(props) {
     console.log(response.data);
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       feels: response.data.main.feels_like,
@@ -19,6 +21,8 @@ export default function SearchEngine(props) {
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000)
+          
+      
     });
 
   }
@@ -42,26 +46,36 @@ export default function SearchEngine(props) {
   if (weatherData.ready) {
   return (
     <div>
-      
-      <CurrentWeather data={weatherData} />
-        
-      <form className="input-group" onSubmit={handleSubmit}>
-        <input
-          id="city-input"
-          type="text"
-          className="form-control"
-          placeholder=" Type a city in here... "
-          onChange={handleCityChange}
+      <div className="container">
+        <div id="background" >
+          <div className="row gx-1">
+              <div className="col-8 order-last">
+                <CurrentWeather data={weatherData} />
+                  
+                <form className="input-group" onSubmit={handleSubmit}>
+                  <input
+                    id="city-input"
+                    type="text"
+                    className="form-control"
+                    placeholder=" Type a city in here... "
+                    onChange={handleCityChange}
 
-        />
+                  />
 
-        <button className="btn 1" type="submit" id="search-input">
-          Search
-        </button>
-        <button className="btn" type="button" id="current-input">
-          <i className="fas fa-map-pin"> </i>
-        </button>
-      </form>
+                  <button className="btn 1" type="submit" id="search-input">
+                    Search
+                  </button>
+                </form>
+              </div>
+
+              <div className="col-3 order-first">
+                    <div id="days">
+                      <Forecast coordinates={weatherData.coordinates}/>
+                    </div>
+              </div>
+          </div>
+        </div>
+      </div>          
     </div>
   );
 
@@ -73,7 +87,7 @@ export default function SearchEngine(props) {
       </div>
     );
 
-  }
+  };
 
 
 }

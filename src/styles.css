@@ -75,12 +75,18 @@ h1 {
 }
 
 .today-temp,
-.cel-temp,
+.cel-temp {
+  font-size: 33px;
+  font-family: "Gravitas One", cursive;
+  color: #1e0b44;
+  text-align: center;
+}
 .fah-temp {
   font-size: 33px;
   font-family: "Gravitas One", cursive;
   color: #1e0b44;
   text-align: center;
+  opacity: 85%;
 }
 #other-info {
   font-size: 12px;
@@ -147,6 +153,7 @@ form {
 }
 #days {
   border-right: 1px #68987f solid;
+  margin-left: 20px;
 }
 
 .weekname {
@@ -154,21 +161,24 @@ form {
   font-size: 15px;
   font-weight: bold;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-family: "Montserrat", sans-serif;
   color: #371560;
+  margin-right: 20px;
 }
-.outcome {
-  margin-left: 35px;
-  width: 36px;
+
+.degree-cel {
+  font-size: 12px;
+  color: #1e0b44;
+  font-family: "Gravitas One", cursive;
+  text-align: center;
 }
-.degree,
-.degree-cel,
 .degree-fah {
   font-size: 12px;
   color: #1e0b44;
   font-family: "Gravitas One", cursive;
   text-align: center;
+  opacity: 85%;
 }
 
 .bottom-text {
