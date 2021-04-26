@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
-import "./styles.css";
 
 export default function SearchEngine(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
