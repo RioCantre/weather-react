@@ -62,8 +62,11 @@ export default function SearchEngine(props) {
                   />
 
                   <button className="btn 1" type="submit" id="search-input">
-                    Search
+                        Search
                   </button>
+                  <button className="btn" type="button" id="current-input">
+                        <i className="fas fa-map-pin"></i>
+                    </button>
                 </form>
               </div>
 
