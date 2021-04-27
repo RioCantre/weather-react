@@ -1,7 +1,5 @@
 import axios from "axios";
 import React, { useState } from "react";
-import "./styles.css";
-import 'bootstrap/dist/css/bootstrap.css';
 import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
 
@@ -46,8 +44,6 @@ export default function SearchEngine(props) {
   if (weatherData.ready) {
   return (
     <div>
-      <div className="container">
-        <div id="background" >
           <div className="row gx-1">
               <div className="col-8 order-last">
                 <CurrentWeather data={weatherData} />
@@ -65,9 +61,6 @@ export default function SearchEngine(props) {
                   <button className="btn 1" type="submit" id="search-input">
                         Search
                   </button>
-                  <button className="btn" type="button" id="current-input">
-                        <i className="fas fa-map-pin"></i>
-                    </button>
                 </form>
               </div>
 
@@ -77,9 +70,8 @@ export default function SearchEngine(props) {
                     </div>
               </div>
           </div>
-        </div>
-      </div>          
-    </div>
+    </div>       
+
   );
 
   } else {
