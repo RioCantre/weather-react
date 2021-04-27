@@ -21,7 +21,7 @@ export default function ForecastDays(props) {
     return (
         <div>
             <h3 className="weekname"> {day()}</h3>
-            <WeatherIcon code={props.data.weather[0].icon} size={25} />
+            <WeatherIcon code={props.data.weather[0].icon} size={25}  />
             &nbsp;&nbsp;&nbsp;&nbsp;
             <span className="degree">
                 <span className="degree-cel"> {minTemp()}</span> |

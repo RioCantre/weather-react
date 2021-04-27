@@ -44,35 +44,48 @@ export default function SearchEngine(props) {
   if (weatherData.ready) {
   return (
     <div>
-          <div className="row gx-1">
-              <div className="col-8 order-last">
-                <CurrentWeather data={weatherData} />
-                  
-                <form className="input-group" onSubmit={handleSubmit}>
-                  <input
-                    id="city-input"
-                    type="text"
-                    className="form-control"
-                    placeholder=" Type a city in here... "
-                    onChange={handleCityChange}
-
-                  />
-
-                  <button className="btn 1" type="submit" id="search-input">
-                        Search
-                  </button>
-                </form>
+              <div className="container">
+              <div id="background" >
+                <div className="row gx-1">
+                  <div className="col-8 order-last">
+                      
+                    <CurrentWeather data={weatherData} />
+                      
+                    <form className="input-group" onSubmit={handleSubmit}>
+                      <input
+                        id="city-input"
+                        type="text"
+                        className="form-control"
+                        placeholder=" Type a city in here... "
+                        onChange={handleCityChange}
+    
+                      />
+    
+                      <button className="btn 1" type="submit" id="search-input">
+                            Search
+                      </button>
+                    </form>
+                  </div>
+    
+                  <div className="col-3 order-first">
+                        <div id="days">
+                          <Forecast coordinates={weatherData.coordinates}/>
+                        </div>
+                  </div>
               </div>
-
-              <div className="col-3 order-first">
-                    <div id="days">
-                      <Forecast coordinates={weatherData.coordinates}/>
-                    </div>
+    
               </div>
           </div>
-    </div>       
-
-  );
+          <footer className="bottom-text">
+            <a href="https://github.com/RioCantre" target="_blank" rel="noreferrer">Open-source</a>
+    
+            &nbsp;code by&nbsp;
+            <span className="name">
+              <a href="https://www.shecodes.io/students/316-rio-cantre" target="_blank" rel="noreferrer"> Rio Cantre </a> 
+            </span>
+          </footer> 
+        </div>       
+        );
 
   } else {
     search();
