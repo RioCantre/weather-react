@@ -77,9 +77,7 @@ h1 {
   color: #1e0b44;
   text-align: center;
 }
-.fah-temp {
-  opacity: 85%;
-}
+
 #other-info {
   font-size: 12px;
   text-align: center;
@@ -161,9 +159,6 @@ form {
   color: #1e0b44;
   font-family: "Gravitas One", cursive;
   text-align: center;
-}
-.degree-fah {
-  opacity: 85%;
 }
 
 .bottom-text {
