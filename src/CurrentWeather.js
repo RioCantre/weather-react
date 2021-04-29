@@ -17,7 +17,7 @@ export default function CurrentWeather(props) {
                 
                 <CurrentDate date={props.data.date} />
                     
-                    <div className="row mt-5">
+                    <div className="row mt-4">
                         <div className="col">
                             <h3 > 
                                 It's {props.data.description} today!
@@ -25,6 +25,11 @@ export default function CurrentWeather(props) {
                             <div className="temperature">
                                 <span className="cel-temp"> {Math.round(props.data.temperature)} °</span>|
                                 <span className="fah-temp"> {Math.round(props.data.temperature * 9 / 5 ) + 32}°</span>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div class="weather-icon">
+                                <WeatherIcon code={props.data.icon} size={100} />
                             </div>
                             <div className="feels-like">
                                 Feels like: <span> {Math.round(props.data.feels)}</span>°
@@ -35,36 +40,7 @@ export default function CurrentWeather(props) {
                             <div className="wind-speed">
                                 Wind: <span className="current-wind"> {props.data.wind} </span> kmph
                             </div>
-                        </div>
-                        <div className="col">
-                            <div class="weather-icon">
-                                <WeatherIcon code={props.data.icon} size={100} />
-                            </div>
-                            <div className="sun-rise">
-                                Sun rise : &nbsp;&nbsp;&nbsp;5:30 am
-                            </div>
-                            <div className="sun-set">
-                                Sun set : &nbsp;&nbsp;&nbsp;6:30 pm
-                            </div>
-                            <div className="hourly">
-                                9:00 :  clear &nbsp; 9° 
-                            </div>
-                            <div className="hourly">
-                                9:00 :  clear &nbsp; 9° 
-                            </div>
-                            <div className="hourly">
-                                9:00 :  clear &nbsp; 9° 
-                            </div>
-                            <div className="hourly">
-                                9:00 :  clear &nbsp; 9° 
-                            </div>
-                            <div className="hourly">
-                                9:00 :  clear &nbsp; 9° 
-                            </div>
-                            <div className="hourly">
-                                9:00 :  clear &nbsp; 9° 
-                            </div>
-                          
+                                                     
                         </div>
                     </div>
                  

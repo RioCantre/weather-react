@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
   
-      <SearchEngine defaultCity="New York" />
+      <SearchEngine defaultCity="Los Angeles" />
          
     </div>
   );

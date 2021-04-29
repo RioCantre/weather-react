@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import "./styles.css";
 
 export default function currentDate(props) {
-    console.log(props.timezone);
     let currentdays = [
         "Sunday",
         "Monday",
