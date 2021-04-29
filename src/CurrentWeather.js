@@ -17,14 +17,20 @@ export default function CurrentWeather(props) {
                 
                 <CurrentDate date={props.data.date} />
                     
-                    <div className="row mt-4">
-                        <div className="col">
+                    <div className="row ">
+                        <div className="col mt-3">
                             <h3 > 
-                                It's {props.data.description} today!
+                                It's
+                                <div>
+                                    {props.data.description}
+                                </div>
+                                <div>
+                                today!
+                                </div>
                             </h3>
                             <div className="temperature">
-                                <span className="cel-temp"> {Math.round(props.data.temperature)} °</span>|
-                                <span className="fah-temp"> {Math.round(props.data.temperature * 9 / 5 ) + 32}°</span>
+                                <span className="cel-temp"> {Math.round(props.data.temperature)}°</span>|
+                                <span className="fah-temp">{Math.round(props.data.temperature * 9 / 5 ) + 32}°</span>
                             </div>
                         </div>
                         <div className="col">

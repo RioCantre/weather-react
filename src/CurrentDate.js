@@ -35,13 +35,21 @@ export default function currentDate(props) {
     
     let fullDateToday = `${currentMonth} ${currentDate}, ${currentYear}`;
     
-    
+    let currenthours = props.date.getUTCHours();
+    if (currenthours < 10) {
+        currenthours = `0${currenthours}`;
+    }
+    let currentminutes = props.date.getUTCMinutes();
+    if (currentminutes < 10) {
+        currentminutes = `0${currentminutes}`;
+    }
    
     return (
         <div>
             <h5>
                 {currentday}&nbsp;{fullDateToday}
             </h5>
+            <span className="current-time" > {currenthours} : {currentminutes} </span>
         </div>
     );
 }
