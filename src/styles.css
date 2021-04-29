@@ -31,7 +31,7 @@ body {
 .container {
   max-width: 600px;
   display: block;
-  margin-top: 9%;
+  margin-top: 6%;
   padding: 30px 40px;
   background: linear-gradient(180deg, #15499f 0%, #1d3e77 53.12%, #150b5e 100%);
 }
