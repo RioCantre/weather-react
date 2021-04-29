@@ -1,185 +1,159 @@
-body {
-  font-family: "Raleway", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bigshot+One&family=Raleway:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+:root {
+  --primary-color: #15499f;
+  --secondary-color: #ecd0a4;
+  --third-color: #2f288b;
+  --text-color: #fbf6ec;
+  --button-color: #150b5e;
+  --footer-color: #e0bca0;
+  --primary-font: "Bigshot One", cursive;
+  --secondary-font: "Roboto Mono", monospace;
+  --third-font: "Abril Fatface", cursive;
+  --forth-font: "Raleway", sans-serif;
 }
 
-#background {
-  background-image: url(/src/image/bg.png);
+body {
+  font-family: var(--forth-font);
+  background: linear-gradient(
+    180deg,
+    #9696df 0%,
+    #7979db 36.98%,
+    #6060cb 68.23%,
+    #4949a9 99.99%
+  );
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 25px;
-  margin: 0 auto;
-  padding: 0 auto;
-  margin-top: 6%;
-  max-width: 750px;
-  max-height: 650px;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 600px;
   display: block;
+  margin-top: 5%;
+  padding: 30px 40px;
+  background: linear-gradient(180deg, #15499f 0%, #1d3e77 53.12%, #150b5e 100%);
 }
-
-.order-last {
-  text-align: center;
-  margin: 20px 18px;
-  font-weight: bold;
-}
-
-h1 {
-  color: #1e0b44;
-  font-size: 28px;
-  padding-top: 35px;
-  padding-bottom: 10px;
-  font-weight: bold;
-  font-family: "Gravitas One", cursive;
-  text-align: center;
-}
-
-#float-r {
-  float: right;
-  width: 50%;
-  padding-top: 40px;
-}
-
-#float-l img {
-  float: left;
+.background {
+  background: linear-gradient(180deg, #15499f 0%, #1d3e77 53.12%, #150b5e 100%);
   display: block;
-  padding-top: 10px;
+  margin: 0;
+  padding: 0;
+  max-width: 480px;
+  max-height: 600px;
 }
 
-.day-name {
-  font-size: 25px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  line-height: 30px;
-  color: #68987f;
+.search-city-division {
+  padding: 25px 25px;
+  background: rgba(236, 208, 164, 0.9);
 }
-
-.current-date,
-.current-time {
-  font-size: 15px;
-  color: #371560;
-  padding-bottom: 20px;
-  font-family: "Montserrat", sans-serif;
-}
-
-.description {
-  font-family: "Montserrat", sans-serif;
-  color: #371560;
-  font-size: 14px;
-  font-weight: bold;
-}
-.today-temp,
-.cel-temp,
-.fah-temp {
-  font-size: 33px;
-  font-family: "Gravitas One", cursive;
-  color: #1e0b44;
-  text-align: center;
-}
-
-#other-info {
-  font-size: 12px;
-  text-align: center;
-  color: #371560;
-  font-family: "Montserrat", sans-serif;
-}
-
-.weather-quote {
-  font-size: 14px;
-  font-family: "Playfair Display", serif;
-  font-weight: bold;
-  color: #371560;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  padding: 0 auto;
-}
-
-form {
-  padding-top: 30px;
-  padding-bottom: 10px;
-  margin-left: 0;
-  padding-left: 0;
-}
-
 #city-input {
-  width: 100px;
+  max-width: 330px;
   border-radius: 20px;
   font-size: 14px;
 }
 #search-input {
-  background: #68987f;
-  color: #1e0b44;
-  margin-left: 4px;
+  background: var(--button-color);
+  color: var(--text-color);
+  margin-left: 10px;
   border-radius: 20px;
   transition: all 200ms ease;
   font-size: 14px;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--forth-font);
   width: 80px;
   text-align: center;
 }
-#current-input {
-  background: #68987f;
-  width: 45px;
-  margin-left: 4px;
-  border-radius: 20px;
-  color: #1e0b44;
-  transition: all 200ms ease;
-}
-#search-input:hover,
-#current-input:hover {
-  color: #e7c120;
-  background: #1e0b44;
+#search-input:hover {
+  color: var(--secondary-color);
 }
 
-.order-first {
-  padding-top: 20px;
-  margin-left: 20px;
+.recent-city-division {
+  padding: 25px 25px;
+  background: rgba(21, 73, 159, 0.6);
 }
-#days {
-  border-right: 1px #68987f solid;
-  margin-left: 20px;
+h2 {
+  color: var(--text-color);
+  font-family: var(--primary-font);
 }
-
-.weekname {
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 8px;
-  font-family: "Montserrat", sans-serif;
-  color: #371560;
-  margin-right: 20px;
+h5 {
+  color: var(--text-color);
+  font-family: var(--secondary-font);
+  font-size: 14px;
 }
-
-.degree-cel,
-.degree-fah {
-  font-size: 16px;
-  color: #1e0b44;
-  font-family: "Gravitas One", cursive;
-  text-align: center;
-}
-
-.bottom-text {
-  text-align: center;
-  font-size: 10px;
-  color: #68987f;
-  padding-top: 10px;
-}
-.bottom-text a {
-  text-decoration: none;
-  transition: all 200ms ease;
-  color: #371560;
-}
-.bottom-text a:hover {
-  color: #e7c120;
-}
-.name a {
-  font-size: 10px;
-  color: #1e0b44;
-  font-family: "Montserrat", sans-serif;
-}
-
-.loader {
-  margin-top: 100px;
+h3 {
+  color: var(--text-color);
+  font-family: var(--third-font);
   font-size: 20px;
-  font-family: "Montserrat", sans-serif;
-  color: #371560;
+  padding: 20px 0;
+}
+.temperature {
+  color: var(--text-color);
+  font-family: var(--secondary-font);
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+.feels-like,
+.humidity,
+.wind-speed {
+  color: var(--text-color);
+  font-family: var(--secondary-font);
+}
+
+.weather-icon {
+  width: 100px;
+  padding-left: 20px;
+  padding-bottom: 25px;
+}
+.sun-rise,
+.sun-set {
+  color: var(--text-color);
+  font-family: var(--secondary-font);
+  font-size: 8px;
+  padding-left: 15%;
+}
+.sun-set {
+  padding-bottom: 9px;
+}
+.hourly {
+  color: var(--text-color);
+  font-family: var(--secondary-font);
+  padding-left: 15%;
+  font-size: 8px;
+  padding-top: 2px;
+}
+
+.forecast-division {
+  padding: 15px 25px;
+  background: rgba(47, 40, 139, 0.6);
+  text-align: center;
+}
+
+.day {
+  color: var(--text-color);
+  font-family: var(--forth-font);
+  font-size: 14px;
+  margin-right: 2px;
+}
+.forecast-temp {
+  color: var(--text-color);
+  font-family: var(--forth-font);
+  font-size: 10px;
+  padding-bottom: 2px;
+}
+
+footer {
+  text-align: center;
+  font-size: 10px;
+  padding: 10px 20px;
+  color: var(--text-color);
+}
+footer a {
+  font-size: 10px;
+  text-decoration: none;
+  color: var(--footer-color);
+  transition: all 200ms ease;
+}
+footer a:hover {
+  color: var(--button-color);
 }

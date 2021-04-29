@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
+import 'bootstrap/dist/css/bootstrap.css';
+import "./styles.css";
 
 export default function SearchEngine(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -43,39 +45,33 @@ export default function SearchEngine(props) {
 
   if (weatherData.ready) {
   return (
-    <div>
-              <div className="container">
-              <div id="background" >
-                <div className="row gx-1">
-                  <div className="col-8 order-last">
-                      
-                    <CurrentWeather data={weatherData} />
-                      
+        <div>
+          <div className="container">
+            <div id="background" >
+              <div className="row">
+                <div className="col-9 px-0">
+              
+                  <div className="search-city-division">
                     <form className="input-group" onSubmit={handleSubmit}>
-                      <input
-                        id="city-input"
-                        type="text"
-                        className="form-control"
-                        placeholder=" Type a city in here... "
-                        onChange={handleCityChange}
-    
-                      />
-    
-                      <button className="btn 1" type="submit" id="search-input">
+                        <input id="city-input" type="text" className="form-control" placeholder=" Type a city in here... "
+                            onChange={handleCityChange} />
+                    
+                        <button className="btn 1" type="submit" id="search-input">
                             Search
-                      </button>
+                        </button>
                     </form>
-                  </div>
-    
-                  <div className="col-3 order-first">
-                        <div id="days">
-                          <Forecast coordinates={weatherData.coordinates}/>
-                        </div>
-                  </div>
-              </div>
-    
-              </div>
+                  </div> 
+                     
+                    <CurrentWeather data={weatherData} />
+                </div>
+                <div className="col-3 px-0">
+              
+                  <Forecast coordinates={weatherData.coordinates} />               
+                </div>
+              </div>   
+            </div>
           </div>
+      
           <footer className="bottom-text">
             <a href="https://github.com/RioCantre" target="_blank" rel="noreferrer">Open-source</a>
     
@@ -84,7 +80,8 @@ export default function SearchEngine(props) {
               <a href="https://www.shecodes.io/students/316-rio-cantre" target="_blank" rel="noreferrer"> Rio Cantre </a> 
             </span>
           </footer> 
-        </div>       
+        </div>
+              
         );
 
   } else {

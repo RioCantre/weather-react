@@ -1,4 +1,6 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import "./styles.css";
 
 export default function currentDate(props) {
     console.log(props.timezone);
@@ -35,22 +37,12 @@ export default function currentDate(props) {
     let fullDateToday = `${currentMonth} ${currentDate}, ${currentYear}`;
     
     
-    let currenthours = props.date.getUTCHours();
-    if (currenthours < 10) {
-        currenthours = `0${currenthours}`;
-    }
-    let currentminutes = props.date.getUTCMinutes();
-    if (currentminutes < 10) {
-        currentminutes = `0${currentminutes}`;
-    }
+   
     return (
         <div>
-            <h2 className="day-name"> {currentday} </h2>
-            <h3>
-            <span className="current-date"> {fullDateToday} </span>
-            &nbsp;&nbsp;&nbsp;
-            <span className="current-time" > {currenthours} : {currentminutes} </span>
-            </h3>
+            <h5>
+                {currentday}&nbsp;{fullDateToday}
+            </h5>
         </div>
-    )
+    );
 }
