@@ -1,19 +1,11 @@
 import React from "react";
-import ReactDom from "react-dom";
-import SearchEngine from "./SearchEngine";
-import "./styles.css";
-import 'bootstrap/dist/css/bootstrap.css';
+import ReactDOM from 'react-dom';
+import './styles.css';
+import App from './App';
 
-function App() {
-  return (
-    <div>
-  
-      <SearchEngine defaultCity="Los Angeles" />
-         
-    </div>
-  );
-}
 
-const rootElement = document.getElementById("root");
-ReactDom.render(<App />, rootElement);
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
 
