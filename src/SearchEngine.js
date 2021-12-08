@@ -49,7 +49,7 @@ export default function SearchEngine(props) {
             <div className="container">
                 <div id="background" >
                 <div className="row">
-                    <div className="col-5 px-0">
+                    <div className="col-9 px-0">
                 
                     <div className="search-city-division">
                         <form className="input-group" onSubmit={handleSubmit}>
@@ -64,7 +64,7 @@ export default function SearchEngine(props) {
                         
                         <CurrentWeather data={weatherData} />
                     </div>
-                    <div className="col-2 px-0">
+                    <div className="col-3 px-0">
                 
                     <Forecast coordinates={weatherData.coordinates} />               
                     </div>
