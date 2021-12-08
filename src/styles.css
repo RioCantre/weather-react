@@ -17,24 +17,14 @@
 html,
 body {
   font-family: var(--forth-font);
-  background: linear-gradient(
-    180deg,
-    #9696df 0%,
-    #7979db 36.98%,
-    #6060cb 68.23%,
-    #4949a9 99.99%
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .container {
   max-width: 600px;
   display: block;
   margin-top: 6%;
-  padding: 30px 18px;
-  background: linear-gradient(180deg, #15499f 0%, #1d3e77 53.12%, #150b5e 100%);
+  padding: 2rem;
+
 }
 
 .row {
@@ -117,7 +107,7 @@ h3 {
 }
 
 .forecast-division {
-  padding: 15px 25px;
+  padding: 18px 25px;
   background: rgba(47, 40, 139, 0.6);
   text-align: center;
 }
@@ -141,7 +131,7 @@ footer {
   text-align: center;
   font-size: 10px;
   padding: 10px 20px;
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 footer a {
   font-size: 10px;
